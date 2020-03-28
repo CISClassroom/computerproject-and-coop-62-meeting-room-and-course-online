@@ -69,7 +69,7 @@ class AddcourseController extends Controller
       ->orderBy('users_id', 'desc')
       ->get();
     }
-   // dd( $bookingRoom);
+   // dd( $bookingRoom)
 
       return view('courses.booking',compact('bookingRoom'));
   }
