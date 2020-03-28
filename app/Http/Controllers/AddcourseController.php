@@ -70,6 +70,10 @@ class AddcourseController extends Controller
       ->get();
     }
    // dd( $bookingRoom)
+      // dd( $bookingRoom)
+
+         // dd( $bookingRoom)
+
 
       return view('courses.booking',compact('bookingRoom'));
   }
