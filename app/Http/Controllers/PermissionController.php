@@ -15,7 +15,10 @@ use Session;
 class PermissionController extends Controller {
 
     public function __construct() {
-        $this->middleware(['auth', 'isAdmin']); //isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->middleware(['auth', 'isAdmin']); 
+        
+        //isAdmin อนุญาตเฉพาะผู้ใช้ที่มี สิทธิ์การอนุญาตเฉพาะในการเข้าถึง
+        //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
 
     /**
@@ -59,11 +62,11 @@ class PermissionController extends Controller {
 
         $permission->save();
 
-        if (!empty($request['roles'])) { //If one or more role is selected
+        if (!empty($request['roles'])) { // ต้องเลือกอย่างน้อง1บทบา 
             foreach ($roles as $role) {
-                $r = Role::where('id', '=', $role)->firstOrFail(); //Match input role to db record
+                $r = Role::where('id', '=', $role)->firstOrFail(); //จับคู่บทบาทอินพุตกับเร็กคอร์ด db 
 
-                $permission = Permission::where('name', '=', $name)->first(); //Match input //permission to db record
+                $permission = Permission::where('name', '=', $name)->first(); //จับคู่อินพุต // สิทธิ์ในการบันทึก db ||Match input //permission to db record
                 $r->givePermissionTo($permission);
             }
         }
@@ -126,7 +129,7 @@ class PermissionController extends Controller {
     public function destroy($id) {
         $permission = Permission::findOrFail($id);
 
-    //Make it impossible to delete this specific permission    
+    //// ทำให้เป็นไปไม่ได้ที่จะลบการอนุญาตเฉพาะนี้ ||Make it impossible to delete this specific permission    
     if ($permission->name == "Administer roles & permissions") {
             return redirect()->route('permissions.index')
             ->with('flash_message',

@@ -21,9 +21,9 @@ class CourseController extends Controller
     public function index()
     {
         //$courses = Course::get();
-        $courses = Course::latest()->paginate(5);
+        /*$courses = Course::latest()->paginate(5);
         return view('courses.index', compact('courses') )
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        ->with('i', (request()->input('page', 1) - 1) * 5); */
 
 
     }
@@ -89,7 +89,9 @@ class CourseController extends Controller
         /*$courses = Course::all();
         return view('courses.index', compact('courses')); */
         //dd($events);
-        $courses = Course::orderBy('coure_day', 'ASC')->get();
+        $courses = Course::orderBy('coure_day', 'ASC')
+        ->paginate(5);
+        //->get();
         //dd($courses);
         return view('courses.index', compact('courses'));
     }

@@ -20,7 +20,8 @@
   <div class="card-body">
     <h5 class="card-title">ชื่อเรื่อง - {{ $data->first_name }}</h5>
     <p class="card-text">ชื่อผู้สอน - {{ $data->last_name }}</p>
-    <div class="links"><a href="{{ $data->video }}"><h3>วีดีโอ</h3></a></div>
+	<div class="links"><a href="{{ $data->video }}"><h3>วีดีโอ</h3></a></div>
+
 	<div align="right">
 		<a href="{{ route('crud.index') }}" class="btn btn-inverse-success btn-fw">กลับ</a>
 	</div>

@@ -111,7 +111,7 @@
 
                   <div align="right"> &nbsp;<br/>
 
-                      {!! Form::submit('Update',['class'=>'btn btn-dark']) !!}
+                      {!! Form::submit('แก้ไข',['class'=>'btn btn-dark']) !!}
                       {{ Form::close() }}
 
                   </div>

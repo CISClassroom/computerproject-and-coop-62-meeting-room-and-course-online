@@ -168,12 +168,13 @@
                                             <td>{{ $row['coure_number'] }}</td>
                                             <td>{{ $row['coure_room'] }}</td>
                                             <td>
+
                                             <form method="post"  action="{{ route('bookingRoom.save') }}">
                                             @csrf
                                             <input type="hidden" name="users_id" value={{Auth::user()->id}}>
                                             <input type="hidden" name="courses_id" value={{ $row['id'] }}>
-                                                <button type="submit" class="btn btn-outline-success btn-sm">จอง</button>
-                                                </form>
+                                            <button type="submit" class="btn btn-outline-success btn-sm">จอง</button>
+                                            </form> <br>
                                                 
                                                 <form method="post" class="delete_form" action="{{route('courses.destroy',$row['id'])}}">
                                                 @can('Edit Post')
@@ -191,14 +192,14 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                            </div>
+                                <br>
+                                <div class="text-center">
 
+                                    {!! $courses->links() !!}
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                   
-
-
-
-
-                    @endsection
+ @endsection

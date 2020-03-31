@@ -42,7 +42,7 @@
                         <td>{{ $room->name }}</td>
                         <td>{{ $room->detail }}</td>
                         <td>
-                    <form action="{{ route('rooms.destroy',$room->id) }}" method="POST">
+                        <form action="{{ route('rooms.destroy',$room->id) }}" method="POST">
 
                         {{-- <a class="btn btn-info" href="{{ route('products.show',$product->id) }}">Show</a> --}}
                         @can('Edit Post')
@@ -55,8 +55,8 @@
                         <button type="submit" class="btn btn-danger">ลบ</button>
                         @endcan
 
-                    </form>
-                </td>
+                        </form>
+                        </td>
             </tr>
         @endforeach
     </table>

@@ -2,22 +2,21 @@
 
 @section('content')
 
-<div class="col-lg-12 grid-margin stretch-card">
+{{-- <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">จองคอร์ส</h4>
             <hr>
-            <div class="panel-body">
+            <div class="panel-body"> --}}
 
                 <!-- {{-- <form action="{{ route('courses.store') }}" method="POST">
                     @csrf
                     <input value={{$course['id']}} name='id' type="hidden"> --}} -->
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xs-12 col-sm-12 ">
                             <div class="form-group">
                                 <strong>ชื่อ :</strong>
-                                <!-- {{-- <input type="text" name="name" class="form-control"> --}} -->
                                 <p type="text" class="form-control">{{ auth()->user()->name }}</p>
 
                             </div>
@@ -45,6 +44,6 @@
                         </div>
                     </div>
             
-                </form>     
+                </form>      --}}
 
 @endsection

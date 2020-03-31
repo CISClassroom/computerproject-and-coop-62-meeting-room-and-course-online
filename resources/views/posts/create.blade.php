@@ -34,7 +34,7 @@
                 <table class="table table-striped">
 
                     <h1>
-                        Create New Post
+                        เพิ่มข่าวสาร
                     </h1>
         <hr>
 
@@ -53,7 +53,7 @@
 
         <br>
 
-            {{ Form::submit('Create Post', array('class' => 'btn btn-success btn-lg btn-block')) }}
+            {{ Form::submit('บันทึก', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {{ Form::close() }}
 
         </div>

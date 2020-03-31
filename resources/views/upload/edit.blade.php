@@ -94,8 +94,8 @@
 	<br /><br /><br />
 	<div align="right">
 		<div class="form-group text-right">
-			<input type="submit" name="edit" class="btn btn-inverse-danger btn-fw" value="Edit" />
-			<a href="{{ route('crud.index') }}" class="btn btn-inverse-success btn-fw">Back</a>
+			<input type="submit" name="edit" class="btn btn-inverse-success btn-fw" value="แก้ไข" />
+			<a href="{{ route('crud.index') }}" class="btn btn-inverse-danger btn-fw">กลับ</a>
 		</div>
 	</div>
 

@@ -1,11 +1,5 @@
-
-
-
-
-
-
-
 <?php
+
 class BaseModel extends Eloquent{
    
      public static function boot()

@@ -82,10 +82,10 @@
              <div class="template-demo">
                 <div class="btn-group" role="group" aria-label="Basic example">
 
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">แก้ไข</a>
 
                       {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
-                      {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                      {!! Form::submit('ลบ', ['class' => 'btn btn-danger']) !!}
                       {!! Form::close() !!}
 
               </div>
@@ -99,6 +99,6 @@
     </div>
   </div>
 </div>
-      <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
+      <a href="{{ route('users.create') }}" class="btn btn-success">เพิ่มผู้ใช้งาน</a>
 
 @endsection

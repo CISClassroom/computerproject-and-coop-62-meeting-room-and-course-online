@@ -34,7 +34,7 @@ class CreatePermissionTables extends Migration
             $table->unsignedInteger('permission_id');
 
             $table->string('model_type');
-            $table->unsignedBigInteger($columnNames['model_morph_key']);
+            $table->unsignedBigInteger($columnNames['model_morph_key']);                /* UNSIGNED BIGINT equivalent column. */                        
             $table->index([$columnNames['model_morph_key'], 'model_type', ], 'model_has_permissions_model_id_model_type_index');
 
             $table->foreign('permission_id')
@@ -50,7 +50,7 @@ class CreatePermissionTables extends Migration
             $table->unsignedInteger('role_id');
 
             $table->string('model_type');
-            $table->unsignedBigInteger($columnNames['model_morph_key']);
+            $table->unsignedBigInteger($columnNames['model_morph_key']); 
             $table->index([$columnNames['model_morph_key'], 'model_type', ], 'model_has_roles_model_id_model_type_index');
 
             $table->foreign('role_id')

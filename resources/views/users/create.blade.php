@@ -55,7 +55,7 @@
                    
            <h1>
 
-               <i class='fa fa-user-plus'></i> Add User
+               <i class='fa fa-user-plus'></i> เพิ่มผู้ใช้งาน
 
            </h1>
          <hr>
@@ -64,18 +64,19 @@
 
         <div class="form-group">
 
-            {{ Form::label('name', 'Name') }}
+            {{ Form::label('name', 'ชื่อผู้ใช้งาน') }}
             {{ Form::text('name', '', array('class' => 'form-control')) }}
 
         </div>
 
         <div class="form-group">
 
-            {{ Form::label('email', 'Email') }}
+            {{ Form::label('email', 'Email ผู้ใช้งาน') }}
             {{ Form::email('email', '', array('class' => 'form-control')) }}
 
         </div>
 
+        กำหนดสิทธิ์<br>
         <div class='form-group'>
 
             @foreach ($roles as $role)
@@ -88,19 +89,19 @@
 
         <div class="form-group">
 
-            {{ Form::label('password', 'Password') }}<br>
+            {{ Form::label('password', 'รหัสผ่าน') }}<br>
             {{ Form::password('password', array('class' => 'form-control')) }}
 
         </div>
 
         <div class="form-group">
 
-            {{ Form::label('password', 'Confirm Password') }}<br>
+            {{ Form::label('password', 'ใส่รหัสผ่านย้ำอีกครั้ง') }}<br>
             {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
 
         </div>
 
-            {{ Form::submit('Add', array('class' => 'btn btn-primary')) }}
+            {{ Form::submit('เพิ่ม', array('class' => 'btn btn-primary')) }}
             {{ Form::close() }}
         </div>
     </div>

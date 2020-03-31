@@ -58,9 +58,9 @@
             <form class="d-flex align-items-center h-100" action="#">
               <div class="input-group">
                 <div class="input-group-prepend bg-transparent">
-                  <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                  {{-- <i class="input-group-text border-0 mdi mdi-magnify"></i> --}}
+                  <i class="input-group-text border-0 mdi "></i>
                 </div>
-                <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
               </div>
             </form>
           </div>
@@ -100,13 +100,13 @@
               </a>
             </li>
            
-          <li class="nav-item dropdown">
+         {{-- <li class="nav-item dropdown">
               <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                 <i class="mdi mdi-bell-outline"></i>
                 <span class="count-symbol bg-danger"></span>
               </a>
 
-          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
                 <h6 class="p-3 mb-0">Notifications</h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
@@ -154,7 +154,7 @@
                 <h6 class="p-3 mb-0 text-center">See all notifications</h6>
         </div>
       </li>
-    </ul>
+    </ul> --}}
 
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
             <span class="mdi mdi-menu"></span>
@@ -201,7 +201,9 @@
                 </ul>
               </div>
             </li>
+            @endcan
 
+            @can('Edit Post')
             <li class="nav-item">
               <a class="nav-link" href="{{ route('roles.index') }}">
                 <span class="menu-title">กำหนดสิทธิ์การเข้าใช้งาน</span>

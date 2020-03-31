@@ -16,7 +16,7 @@ class CrudsController extends Controller
      */
     public function index()
     {
-        $data = Crud::latest()->paginate(8);
+        $data = Crud::latest()->paginate(5); 
         return view('upload.index', compact('data'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -49,8 +49,8 @@ class CrudsController extends Controller
 
         $image = $request->file('image');
 
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $new_name);
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();        /* $image_name ใช้อ่านไฟล์ $image  */
+        $image->move(public_path('images'), $new_name);                         /* เมื่อบันทึกแล้วจะนำไปเก็บที่ path images*/
 
         $form_data = array(
             'first_name'       =>   $request->first_name,
@@ -137,8 +137,8 @@ class CrudsController extends Controller
                 'image'         =>  'image|max:2048'
             ]);
 
-            $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $image_name);
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();      /* $image_name ใช้อ่านไฟล์ $image  */
+            $image->move(public_path('images'), $image_name);                       /* เมื่อบันทึกแล้วจะนำไปเก็บที่ path images*/
         }
         else
         {

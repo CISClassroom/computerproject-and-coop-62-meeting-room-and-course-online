@@ -14,16 +14,17 @@ class DropdownController extends Controller
 {
      function index()
      {
-      $country_list = DB::table('rooms')
+     /* $country_list = DB::table('rooms')
          // ->groupBy('name')
           ->get();
          // dd($country_list);
       return view('addevent.dynamic_dependent')->with('country_list', $country_list);
+      */
      }
  
      function fetch(Request $request)
      {
-      $select = $request->get('select');
+      /* $select = $request->get('select');
       $value = $request->get('value');
       $dependent = $request->get('dependent');
       $data = DB::table('rooms')
@@ -34,7 +35,7 @@ class DropdownController extends Controller
       {
        $output .= '<option value="'.$row->$dependent.'">'.$row->$dependent.'</option>';
       }
-      echo $output;
+      echo $output; */
      }
 
 }

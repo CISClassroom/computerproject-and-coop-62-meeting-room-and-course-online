@@ -50,6 +50,9 @@
  <div class="col-lg-12 grid-margin stretch-card">
      <div class="card">
          <div class="card-body">
+            <h1>
+                <i class="fa fa-key"></i>กำหนดสิทธิ์การเข้าใช้งาน
+            </h1>
              <table class="table table-striped">
                 <thead>
                     <tr>
@@ -97,6 +100,6 @@
       </div>               
    </div>   
 </div>
-        <a href="{{ URL::to('roles/create') }}" class="btn btn-success">Add Role</a>
+        <a href="{{ URL::to('roles/create') }}" class="btn btn-success">เพิ่มสิทธิ์การเข้าใช้งาน</a>
 
               @endsection

@@ -85,6 +85,6 @@
         </div>
     </div>
     </div>
-                <a href="{{ URL::to('permissions/create') }}" class="btn btn-success">Add Permission</a> 
+                <a href="{{ URL::to('permissions/create') }}" class="btn btn-success">เพิ่มบทบาท</a> 
 
     @endsection

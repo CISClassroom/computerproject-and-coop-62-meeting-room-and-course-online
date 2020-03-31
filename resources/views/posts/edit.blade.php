@@ -50,7 +50,7 @@
                 {{ Form::textarea('body', null, array('class' => 'form-control')) }}
             <br>
 
-                {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+                {{ Form::submit('บันทึก', array('class' => 'btn btn-primary')) }}
 
                 {{ Form::close() }}
 

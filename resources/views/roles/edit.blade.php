@@ -35,7 +35,7 @@
 
             <h1>
 
-                <i class='fa fa-key'></i> Edit Role: {{$role->name}}
+                <i class='fa fa-key'></i> แก้ไขสิทธิ์การเข้าใช้งาน : {{$role->name}}
 
             </h1>
         <hr>
@@ -44,12 +44,12 @@
 
         <div class="form-group">
 
-                {{ Form::label('name', 'Role Name') }}
+                {{ Form::label('name', 'ชื่อสิทธิ์การเข้าใช้งาน') }}
                 {{ Form::text('name', null, array('class' => 'form-control')) }}
 
         </div>
                 <h5>
-                    <b>Assign Permissions</b>
+                    <b>กำหนดสิทธิ์การใช้งาน</b>
                 </h5>
 
             @foreach ($permissions as $permission)
@@ -62,7 +62,7 @@
         @endforeach
 
             <br>
-                {{ Form::submit('Edit', array('class' => 'btn btn-primary')) }}
+                {{ Form::submit('แก้ไข', array('class' => 'btn btn-primary')) }}
                 {{ Form::close() }}  
          </div>
     </div>

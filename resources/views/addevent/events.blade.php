@@ -264,8 +264,16 @@
         @endforeach
       
              </tbody>
+           
            </table>
+           <br>
           </div>
+          <br> 
+          <div class="text-center">
+
+{!! $events->links() !!}
+
+</div>
       </div>
       
 

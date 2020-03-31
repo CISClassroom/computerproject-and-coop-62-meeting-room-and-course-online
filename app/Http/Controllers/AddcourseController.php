@@ -39,7 +39,7 @@ class AddcourseController extends Controller
       Addcourse::create($request->all());
  
       return redirect()->route('bookingRoom.booking')
-                      ->with('success','Product created successfully.');
+                      ->with('success','Addcourse created successfully.');
   }
  
 
@@ -54,27 +54,20 @@ class AddcourseController extends Controller
       //->where('users_id', '<=', 'users_id')
       //->where('users.id', '>=', $bookingRoom)
       //->where('users.id', '=', Auth::id())  /* ใช้แบ่งข้อมูลผู้ใช้งาน */
-      ->orderBy('users_id', 'desc')
-      ->get();
+      ->orderBy('users_id', 'desc') /* ใช้จัดลำดับเหตุกาณ์ เรียงตามการสมัครของผู้ใช้งาน */
+      ->paginate(5);
+      //->get();
     }
     else{
         $bookingRoom = DB::table('addcourses') 
       ->join('users', 'users.id', '=', 'addcourses.users_id')  /** Join คอลัมของผู้ใช้งานมา*/
       ->join('courses', 'courses.id', '=', 'addcourses.courses_id')  /** Join ชื่อคอร์สอบรมมา*/
       ->select('users.name', 'courses.coure_name','addcourses.id')
-      //->whereColumn('users_id', '=', 'users_id')
-      //->where('users_id', '<=', 'users_id')
-      //->where('users.id', '>=', $bookingRoom)
       ->where('users.id', '=', Auth::id())  /* ใช้แบ่งข้อมูลผู้ใช้งาน */
-      ->orderBy('users_id', 'desc')
+      ->orderBy('courses_id', 'desc') /* ใช้จัดลำดับเหตุกาณ์ เรียงตามคอร์สอบรม */
       ->get();
     }
-   // dd( $bookingRoom)
-      // dd( $bookingRoom)
-
-         // dd( $bookingRoom)
-
-
+   // dd( $bookingRoom) // dd( $bookingRoom) // dd( $bookingRoom)
       return view('courses.booking',compact('bookingRoom'));
   }
 
@@ -87,6 +80,6 @@ class AddcourseController extends Controller
      DB::table('addcourses')->where('id','=',$id)->delete();
 
       return redirect()->route('bookingRoom.booking')
-                      ->with('success','Product deleted successfully');
+                      ->with('success','Addcourse deleted successfully');
   }
 }

@@ -10,13 +10,14 @@
 				<div class="alert alert-danger">
 					<ul>
 						@foreach($errors->all() as $error)
-						<li>{{ $error }}</li>
+						{{-- <li>{{ $error }}</li> --}}
+						<li>อ๊ะ!! กรอกรายละเอียดไม่ครบ</li>
 						@endforeach
 					</ul>
 				</div>
 				@endif
 				<div align="right">
-					<a href="{{ route('crud.index') }}" class="btn btn-gradient-danger">Back</a>
+					<a href="{{ route('crud.index') }}" class="btn btn-gradient-danger">กลับ</a>
 				</div>
 
 				  <div class="template">
@@ -27,7 +28,7 @@
 
 						@csrf
 						<div class="form-group">
-							<label class="col-md-4 text-right" for="exampleFormControlTextarea1">Enter First Name</label>
+							<label class="col-md-4 text-right" for="exampleFormControlTextarea1">ชื่อเรื่อง</label>
 							<div class="col-md-8">
 								<textarea type="text" name="first_name" class="form-control input-lg" id="exampleFormControlTextarea1" rows="3" ></textarea>
 							</div>
@@ -36,7 +37,7 @@
 						<br />
 						<br />
 						<div class="form-group">
-							<label class="col-md-4 text-right">Enter Last Name</label>
+							<label class="col-md-4 text-right">ชื่อผู้สอน</label>
 							<div class="col-md-8">
 							<textarea type="text" name="last_name" class="form-control input-lg" id="exampleFormControlTextarea1" rows="3" ></textarea>
 							</div>
@@ -65,12 +66,12 @@
 						
 					
 						<div class="form-group">
-							<label>File upload</label>
+							<label>รูปภาพ</label>
 								<input  type="file" name="image" class="file-upload-default">
 								<div class="input-group col-xs-12">
-									<input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+									<input type="text" class="form-control file-upload-info" disabled placeholder="ไฟล์รูปภาพ png, img, jpg, GIF">
 									<span class="input-group-append">
-										<button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
+										<button class="file-upload-browse btn btn-gradient-primary" type="button">เลือกไฟล์</button>
 									</span>
 								</div>
 						</div>
@@ -78,7 +79,7 @@
 					
 						<br /><br /><br />
 						<div class="form-group text-center">
-							<input type="submit" name="add" class="btn btn-gradient-success btn-lg btn-block" value="Add" />
+							<input type="submit" name="add" class="btn btn-gradient-success btn-lg btn-block" value="บันทึก" />
 						</div>
 					
 					</form>

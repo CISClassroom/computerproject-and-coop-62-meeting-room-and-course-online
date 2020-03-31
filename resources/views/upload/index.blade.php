@@ -101,6 +101,7 @@
 		  </tbody>
 
 		</table>
+		<br><br>
 		{!! $data->links() !!} 
 	  </div>
 	</div>

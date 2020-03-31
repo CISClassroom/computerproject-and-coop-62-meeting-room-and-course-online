@@ -40,8 +40,8 @@ class EventController extends Controller
         $data = DB::Event('data')->paginate(5);
 
         return view('addevent.events', ['data' => $data]);  */
-        $events = Event::orderBy('created_at', 'desc')->paginate(5);
-        return view('addevent.events',  compact('events'));
+       /* $events = Event::orderBy('created_at', 'desc')->paginate(5);
+        return view('addevent.events',  compact('events'));*/
 
     }
 
@@ -108,7 +108,9 @@ class EventController extends Controller
         //return view('addevent.events', compact('events'));
         //dd($events);
 
-        $events = Event::orderBy('start_date', 'ASC')->get();
+        $events = Event::orderBy('start_date', 'ASC')  /* ใช้จัดลำำดับเหตุการณ์ตามวันที่ */
+        ->paginate(5);
+       // ->get();
         return view('addevent.events', compact('events'));
     }
 

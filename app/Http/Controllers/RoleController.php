@@ -14,7 +14,9 @@ use Session;
 class RoleController extends Controller {
 
     public function __construct() {
-        $this->middleware(['auth', 'isAdmin']);//isAdmin middleware lets only users with a //specific permission permission to access these resources
+        $this->middleware(['auth', 'isAdmin']);
+        //isAdmin อนุญาตเฉพาะผู้ใช้ที่มี สิทธิ์การอนุญาตเฉพาะในการเข้าถึง
+        //isAdmin middleware lets only users with a //specific permission permission to access these resources
     }
 
     /**
@@ -46,7 +48,7 @@ class RoleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-    //Validate name and permissions field
+    // ตรวจสอบความถูกต้องของชื่อและการอนุญาต
         $this->validate($request, [
             'name'=>'required|unique:roles|max:10',
             'permissions' =>'required',
@@ -60,9 +62,11 @@ class RoleController extends Controller {
         $permissions = $request['permissions'];
 
         $role->save();
-    //Looping thru selected permissions
+    //Looping การอนุญาตที่เลือกไว้
+
         foreach ($permissions as $permission) {
             $p = Permission::where('id', '=', $permission)->firstOrFail(); 
+         // ดึงบทบาทที่สร้างขึ้นใหม่และกำหนดสิทธิ์
          //Fetch the newly created role and assign permission
             $role = Role::where('name', '=', $name)->first(); 
             $role->givePermissionTo($p);
