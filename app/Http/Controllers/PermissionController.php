@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Auth;
+use DB;
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
@@ -127,6 +128,8 @@ class PermissionController extends Controller {
     * @return \Illuminate\Http\Response
     */
     public function destroy($id) {
+       /*  DB::table('permissions')->where('id','=',$id)->delete(); */
+
         $permission = Permission::findOrFail($id);
 
     //// ทำให้เป็นไปไม่ได้ที่จะลบการอนุญาตเฉพาะนี้ ||Make it impossible to delete this specific permission    

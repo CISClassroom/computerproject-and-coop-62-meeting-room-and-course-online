@@ -13,6 +13,7 @@ use Spatie\Permission\Models\Permission;
 
 //Enables us to output flash messaging
 use Session;
+use DB;
 
 class UserController extends Controller {
 
@@ -136,9 +137,9 @@ class UserController extends Controller {
     * @return \Illuminate\Http\Response
     */
     public function destroy($id) {
+      //  dd($id);
     //Find a user with a given id and delete
-        $user = User::findOrFail($id); 
-        $user->delete();
+    DB::table('users')->where('id','=',$id)->delete();
 
         return redirect()->route('users.index')
             ->with('flash_message',

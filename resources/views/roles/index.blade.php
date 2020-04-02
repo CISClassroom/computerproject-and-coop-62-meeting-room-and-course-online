@@ -84,9 +84,32 @@
                 <div class="btn-group" role="group" aria-label="Basic example">
                          <a href="{{ URL::to('roles/'.$role->id.'/edit') }}" class="btn btn-gradient-dark btn-icon-text" style="margin-right: 10px;">แก้ไข</a>
 
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
-                            {!! Form::submit('ลบ', ['class' => 'btn btn-gradient-danger btn-icon-text']) !!}
-                            {!! Form::close() !!}
+                            
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-gradient-danger btn-icon-text" data-toggle="modal" data-target="#exampleModal{{$role->id}}">ลบ</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal{{$role->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">!! แจ้งเตือน !!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">คุณยืนยันที่จะลบ สิทธิ์การเข้าใช้งาน</div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-gradient-secondary btn-icon-text" data-dismiss="modal">ยกเลิก</button>
+        {!! Form::open(['method' => 'DELETE', 'route' => ['roles.destroy', $role->id] ]) !!}
+        {!! Form::submit('ลบ', ['class' => 'btn btn-gradient-danger btn-icon-text']) !!}
+        {!! Form::close() !!}
+    </div>
+    </div>
+</div>
+</div>
+
+
                                            
                     </div>
                  </div>
